@@ -7,8 +7,10 @@ const port=3000;
 
 app.use(express.json());
 
-app.get('/',(req,res,next)=> res.send('hello dick'));
 
-app.use('/api/allstudents',studentRoutes);
+app.use('/allstudents',studentRoutes);
+app.use('/calculations',studentRoutes);
+
+app.all('*',(req,res,next)=> res.send('you have reached the end of the responses'));
 
 app.listen(port,()=> console.log('app is listening on port ${port}'));
