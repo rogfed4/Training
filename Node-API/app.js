@@ -27,8 +27,11 @@ app.use((req,res,next)=>{
     next();
 });
 
+
 // Handling requests
 app.use('/products', productRoutes);
+
+
 
 console.log('a');
 app.use((req,res,next)=>{
